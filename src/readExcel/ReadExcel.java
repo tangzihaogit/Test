@@ -11,12 +11,11 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
  * 
  * @author liucong
  *
- * @date 2017Äê7ÔÂ23ÈÕ
+ * @date 2017å¹´7æœˆ23æ—¥
  */
 public class ReadExcel {
 	public static void main(String[] args) {
 		try {
-		    System.out.println("----------");
 			File filePath = new File("C:/Users/Administrator/Desktop/sysm_user.xlsx");  
 			showExcel(filePath);
 		} catch (Exception e) {
@@ -25,25 +24,25 @@ public class ReadExcel {
 	}
 
 	/**
-	 * ¶ÁÈ¡ËùÓĞµÄexcel±íÄÚÈİ
+	 * è¯»å–æ‰€æœ‰çš„excelè¡¨å†…å®¹
 	 */
 	@SuppressWarnings("resource")
 	public static void showExcel(File filePath) throws Exception {
-		// ¹¹Ôì XSSFWorkbook¶ÔÏó,filePath ´«ÈëÎÄ¼şÂ·¾¶
-		// ¶ÁÈ¡Excel 2003
+		// æ„é€  XSSFWorkbookå¯¹è±¡,filePath ä¼ å…¥æ–‡ä»¶è·¯å¾„
+		// è¯»å–Excel 2003
 		// HSSFWorkbook workbook = new HSSFWorkbook(new FileInputStream(filePath));
-		// ¶ÁÈ¡Excel 2007
-		XSSFWorkbook workbook = new XSSFWorkbook(new FileInputStream(filePath));//µÃµ½excel¶ÔÏó
+		// è¯»å–Excel 2007
+		XSSFWorkbook workbook = new XSSFWorkbook(new FileInputStream(filePath));//å¾—åˆ°excelå¯¹è±¡
 		
 		XSSFSheet sheet = null;
-		for (int i = 0; i < workbook.getNumberOfSheets(); i++) {// »ñÈ¡Ã¿¸öSheet±í
+		for (int i = 0; i < workbook.getNumberOfSheets(); i++) {// è·å–æ¯ä¸ªSheetè¡¨
 			//workbook.getSheet(arg0)
-			sheet = workbook.getSheetAt(i);//Ñ­»·µÃµ½Sheet
+			sheet = workbook.getSheetAt(i);//å¾ªç¯å¾—åˆ°Sheet
 			System.out.println(sheet.getSheetName());
-			for (int j = 0; j <= sheet.getLastRowNum(); j++) {// »ñÈ¡Ã¿ĞĞ
-				XSSFRow row = sheet.getRow(j);//µÃµ½Ã¿Ò»ĞĞ
-				if (null != row) {// µ±¿Õ²»µÈÓÚrowÑ­»·»ñÈ¡Ã¿¸öµ¥Ôª¸ñ
-					for (int k = 0; k < row.getLastCellNum(); k++) {// »ñÈ¡Ã¿¸öµ¥Ôª¸ñ
+			for (int j = 0; j <= sheet.getLastRowNum(); j++) {// è·å–æ¯è¡Œ
+				XSSFRow row = sheet.getRow(j);//å¾—åˆ°æ¯ä¸€è¡Œ
+				if (null != row) {// å½“ç©ºä¸ç­‰äºrowå¾ªç¯è·å–æ¯ä¸ªå•å…ƒæ ¼
+					for (int k = 0; k < row.getLastCellNum(); k++) {// è·å–æ¯ä¸ªå•å…ƒæ ¼
 						if (null != row.getCell(k) || "".equals(row.getCell(k))) {
 							System.out.print(row.getCell(k) + "\t");
 						}
