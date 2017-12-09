@@ -16,6 +16,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 public class ReadExcel {
 	public static void main(String[] args) {
 		try {
+		    System.out.println("吊打唐子壕");
 			File filePath = new File("C:/Users/Administrator/Desktop/sysm_user.xlsx");  
 			showExcel(filePath);
 		} catch (Exception e) {
